@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 
 import { getProducts, addToCart } from "../../ducks/productReducer";
 
+import './shop.css';
+
 class Shop extends Component {
   constructor(props) {
     super(props);
@@ -17,14 +19,14 @@ class Shop extends Component {
   }
   render() {
     return (
-      <div>
+      <div  className="shop-container">
         {this.props.products[0] ? (
           this.props.products.map((val, i) => (
-            <div key={i}>
-              <h1>{val.name}</h1>
-              <h3>{val.type}</h3>
-              <p>{val.price}</p>
-              <button onClick={() => this.addToCart(val.id)}>
+            <div key={i} className="product-container">
+              <h1 className="product-name">{val.name}</h1>
+              <h3 className="product-type">{val.type}</h3>
+              <p className="product-price">{val.price}</p>
+              <button onClick={() => this.addToCart(val.id)}  className="product-button">
                 Add To Cart
               </button>
             </div>

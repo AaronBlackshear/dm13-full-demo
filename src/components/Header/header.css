@@ -1,0 +1,24 @@
+.header{
+    width: 100vw;
+    height: 10vh;
+    background-color: #222;
+    border-bottom: 2px solid rgb(113, 25, 185);
+    margin-bottom: 3vh;
+}
+
+.container{
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none;
+    color: #f3f3f9;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px;
+}

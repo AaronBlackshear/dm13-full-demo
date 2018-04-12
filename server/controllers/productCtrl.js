@@ -7,10 +7,9 @@ const getProducts = (req, res) => {
 };
 
 const getCart = (req, res) => {
-  console.log("HIT");
   req.app
     .get("db")
-    .getCart(req.user.id)
+    .getCart([req.user.id])
     .then(response => {
       console.log(response);
       res.status(200).json(response);
@@ -22,7 +21,7 @@ const getCart = (req, res) => {
 };
 
 const addToCart = (req, res) => {
-  console.log(req.user.id, req.params.id);
+  console.log("USER: ", req.user)
   req.app
     .get("db")
     .addToCart([req.user.id, req.params.id])
@@ -30,8 +29,18 @@ const addToCart = (req, res) => {
     .catch(err => res.status(500).json(err));
 };
 
+const removeFromCart = (req, res) => {
+  // console.log(req)
+  req.app
+    .get("db")
+    .removeFromCart([req.user.id, req.params.id])
+    .then(response => getCart(req, res))
+    .catch(err => res.status(500).json(err));
+};
+
 module.exports = {
   getProducts,
   getCart,
-  addToCart
+  addToCart,
+  removeFromCart
 };

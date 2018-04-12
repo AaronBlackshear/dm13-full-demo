@@ -1,9 +1,11 @@
 import React from "react";
 
+import './login.css';
+
 const Login = () => (
-  <div>
+  <div className="button-container">
     <a href={process.env.REACT_APP_LOGIN}>
-      <button>Login</button>
+      <button className="login">Login</button>
     </a>
   </div>
 );

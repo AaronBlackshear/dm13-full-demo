@@ -1,0 +1,46 @@
+.landing-container, .user-container{
+    width: 90%;
+    height: 30vh;
+    background: rgba(0, 153, 255, 0.561);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-btn, .user-logout{
+    color: white;
+    border-style: none;
+    width: 25%;
+    height: 4vh;
+    background-color: rgba(0, 0, 0, 0.24);
+    border: 1px solid rgb(255, 255, 255);
+}
+
+/* .user-container{
+    width: 90%;
+    background-color: rgba(0, 153, 255, 0.561);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+.login-btn:hover, .user-logout:hover{
+    /* background-color: rgba(0, 153, 255, 0.541); */
+    animation: loginBTN 0.25s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loginBTN{
+    from{
+        background-color: rgba(0, 0, 0, 0.24);
+    }
+    to{
+        background-color: rgba(0, 153, 255, 0.561);
+    }
+}

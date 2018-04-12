@@ -4,27 +4,29 @@ import { Link } from "react-router-dom";
 
 import { getUser } from "../../ducks/userReducer";
 
+import "./landing-page.css";
+
 class LandingPage extends Component {
   componentDidMount() {
     this.props.getUser();
   }
   render() {
-    console.log(this.props);
     return (
       <div>
         {this.props.user.name ? (
-          <div>
-            <p>
-              {this.props.user.name} & {this.props.user.authid}
-            </p>
+          <div className="user-container">
+            <h2 className="user-name">Hello {this.props.user.name}!</h2>
             <a href={process.env.REACT_APP_LOGOUT}>
-              <button>Logout</button>
+              <button className="user-logout">Logout</button>
             </a>
           </div>
         ) : (
-          <Link to="/login">
-            <button>LOGIN</button>
-          </Link>
+          <div className="landing-container">
+            <h2 className="alert-text">Opps! You're not logged in!</h2>
+            <Link to="/login">
+              <button className="login-btn">LOGIN</button>
+            </Link>
+          </div>
         )}
       </div>
     );

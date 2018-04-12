@@ -1,0 +1,30 @@
+.button-container{
+    width: 100vw;
+}
+
+.login{
+    width: 25%;
+    height: 6vh;
+    border-style: none;
+    background-color: rgba(0, 183, 255, 0.561);
+    color: white;
+    text-transform: uppercase;
+    /* animation: login 0.25s ease-in-out; */
+    transition: ease-in-out;
+}
+
+.login:hover{
+    animation: login 0.25s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes login{
+    from{
+        background-color: rgba(0, 183, 255, 0.561);
+    }
+    to{
+        background-color: white;
+        color: rgba(0, 183, 255, 0.561);
+        border: 1px solid rgba(0, 183, 255, 0.561);
+    }
+}
